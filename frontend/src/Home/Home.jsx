@@ -17,13 +17,13 @@ export default function Home() {
             patientId: patientId, doctorId: selectedDoctorId, date: appointmentDate, time: appointmentTime
         }
         console.log(newAppointment)
-        axios.post("http://localhost:4000/api/appoinments/add", newAppointment)
+        axios.post("https://hospital-application-0yxw.onrender.com/api/appoinments/add", newAppointment)
             .then((res) => {
                 console.log(res)
             })
     }
     async function fetchDoctors() {
-        await axios.get("http://localhost:4000/api/doctors")
+        await axios.get("https://hospital-application-0yxw.onrender.com/api/doctors")
             .then((res) => {
                 console.log(res.data)
                 setDoctors(res.data)
